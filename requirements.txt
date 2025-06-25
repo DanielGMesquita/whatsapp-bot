@@ -1,0 +1,5 @@
+pywhatkit
+schedule
+pyautogui
+opencv-python
+pillow

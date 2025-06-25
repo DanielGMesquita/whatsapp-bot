@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  whatsapp_bot:
+    build: .
+    container_name: whatsapp_bot
+    restart: always
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XAUTHORITY=/root/.Xauthority
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${XAUTHORITY}:/root/.Xauthority:ro
+      - ${HOME}/.config/google-chrome/Default:/root/.config/google-chrome/Default
+      - ./app:/app
+    working_dir: /app
+    stdin_open: true
+    tty: true
